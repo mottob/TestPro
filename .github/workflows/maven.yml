@@ -22,3 +22,13 @@ jobs:
         java-version: 1.8
     - name: Build with Maven
       run: mvn -B package --file pom.xml
+
+    - name: Deploy to Heroku
+      uses: AkhileshNS/heroku-deploy@v3.0.4
+      with:
+        # This will be used for authentication. You can find it in your heroku homepage account settings
+        heroku_api_key: api1
+        # Email that you use with heroku
+        heroku_email: aaa@bbb.com
+        # The appname to use for deploying/updating
+        heroku_app_name: eee
